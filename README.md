@@ -34,9 +34,11 @@ Code Execution:
 •	Install postgres database with postgis extension.
 
 •	Run the code within the virtual environment command line interface as below:
+
 python address_to_state_processor.py "provide_address" "provide_path_to_shapefile_location" "provide_postgres_hostname" "provide_postgres_username" "provide_postgres_password" "provide_google_maps_api_key"
 
 •	Example code execution:
+
 python address_to_state_processor.py "4 Pennsylvania Plaza" "C:/Docs/state_shp/tl_2019_us_state.shp" "localhost" "postgres" "P@34Ssw05rD" "4sxtTRIS..."
 
 •	The code runs on a local host server. Go to http://127.0.0.1:5000/ to see the result.
