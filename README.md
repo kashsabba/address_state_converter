@@ -1,28 +1,29 @@
-The attached code called “address_to_state_processor.py” does the following:
 
-User needs to first create a postgres database called states_us with a postgis extension. If the database name is different than specified, an input parameter in line 19 of the code needs to be changed accordingly. 
+address_to_state_processor.py does the following tasks:
 
-Reads the address, state shapefile location (downloaded from census tiger files), postgres database hostname, username, and password from the command line.
+•	Reads the address, state shapefile location (downloaded from census tiger files), postgres database hostname, username, and password    from the command line.
 
-Reads the google maps api with a key embedded and retrieves the latitude and longitude coordinates for the address.
+•	Reads the google maps api with a key embedded and retrieves the latitude and longitude coordinates for the address.
 
-Connects to the postgres database using the valid connections provided above.
+•	Connects to the postgres database using the valid connections provided above.
 
-Creates a table called “states” to be filled with state geometries and attribute fields from the shape file.
+•	Creates a table called “states” to be filled with state geometries and attribute fields from the shape file.
 
-Creates a table called “points” to be filled with the latitude, longitude coordinates from the address.
+•	Creates a table called “points” to be filled with the latitude, longitude coordinates from the address.
 
-Opens the shape file and converts the polygon features to well-known text (wkt) geometry format.
+•	Opens the shape file and converts the polygon features to well-known text (wkt) geometry format.
 
-Inserts the shape file wkt geometries and state name for each geometry into the “states” table using postgis functions.
+•	Inserts the shape file wkt geometries and state name for each geometry into the “states” table using postgis functions.
 
-Creates a point geometry using latitude, longitude coordinates and inserts into the table “points” using postgis functions.
+•	Creates a point geometry using latitude, longitude coordinates and inserts into the table “points” using postgis functions.
 
-Executes a spatial join to find the state from the “states” geometry where the “point” geometry is contained in using postgis functions.
+•	Executes a spatial join to find the state from the “states” geometry where the “point” geometry is contained in using postgis functions.
 
-Writes out the “name” of the state.
+•	Writes out the “name” of the state.
 
-Code Execution
+Code Execution:
+
+•	User needs to first create a postgres database called states_us with a postgis extension. If the database name is different than specified, an input parameter in line 30 of the code needs to be changed accordingly. 
 
 •	Copy the code to a local drive. 
 
