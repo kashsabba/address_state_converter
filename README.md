@@ -3,7 +3,7 @@ address_to_state_processor.py does the following tasks:
 
 •	Reads the address, state shapefile location (downloaded from census tiger files), postgres database hostname, username, password, google maps api key from the command line.
 
-•	Reads the google maps api with a key embedded and retrieves the latitude and longitude coordinates for the address.
+•	Reads the google maps api with a key provided from command line and retrieves the latitude and longitude coordinates for the address.
 
 •	Connects to the postgres database using the valid connections provided above.
 
